@@ -8,9 +8,7 @@ import (
 
 func Init() {
 	event_manager.Init()
-	event_manager.Subscribe(config.UserEvent, hello)
-	event_manager.Subscribe(config.UserEvent, howAreYou)
-	event_manager.Subscribe(config.UserEvent, verifyEmail)
+	event_manager.Subscribe(config.UserEvent, hello, howAreYou, verifyEmail)
 }
 
 func hello() {

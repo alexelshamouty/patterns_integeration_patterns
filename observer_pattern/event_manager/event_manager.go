@@ -14,8 +14,11 @@ func Post_event(event string) {
 		fmt.Println("No subscribers for event", event)
 	}
 }
-func Subscribe(event string, callback func()) {
-	Subscribers[event] = append(Subscribers[event], callback)
+func Subscribe(event string, callback ...func()) {
+	for _, call := range callback {
+		Subscribers[event] = append(Subscribers[event], call)
+	}
+
 }
 
 func Init() {

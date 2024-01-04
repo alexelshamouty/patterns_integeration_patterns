@@ -10,8 +10,7 @@ func Init() {
 	//Open Slack connection
 	open_slack_connection()
 	//Register handles for events
-	event_manager.Subscribe(config.SlackEvent, notify_slack)
-	event_manager.Subscribe(config.SlackEvent, notify_special_channels)
+	event_manager.Subscribe(config.SlackEvent, notify_slack, notify_special_channels)
 }
 
 func notify_slack() {
